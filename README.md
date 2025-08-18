@@ -1,4 +1,4 @@
-# lmdbobjectstore
+# lmdb-object-store
 
 Lightweight thread-safe Python object store on top of **LMDB**.
 Provides a dict-like API (with buffering and atomic multi-put), automatic map-size growth, and fast zero-copy reads without having to handle LMDB's lower-level details.
@@ -19,7 +19,7 @@ Provides a dict-like API (with buffering and atomic multi-put), automatic map-si
 ## Installation
 
 ```bash
-pip install lmdbobjectstore
+pip install lmdb-object-store
 ```
 
 ### Requirements
@@ -230,5 +230,3 @@ This library uses Python `pickle` for value serialization. **Never unpickle data
 
   * `map_size`, `subdir`, `readonly`, `lock`, ...
   * `max_map_size` (recognized by this wrapper to cap auto-growth).
-
----

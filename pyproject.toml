@@ -30,10 +30,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yuka30240/LmdbObjectStore"
-Repository = "https://github.com/yuka30240/LmdbObjectStore"
-Issues = "https://github.com/yuka30240/LmdbObjectStore/issues"
-Changelog = "https://github.com/yuka30240/LmdbObjectStore/releases"
+Homepage = "https://github.com/yuka30240/lmdb-object-store"
+Repository = "https://github.com/yuka30240/lmdb-object-store"
+Issues = "https://github.com/yuka30240/lmdb-object-store/issues"
+Changelog = "https://github.com/yuka30240/lmdb-object-store/releases"
 
 [tool.pytest.ini_options]
 minversion = "8.0"
