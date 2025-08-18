@@ -1,0 +1,86 @@
+[project]
+name = "lmdb-object-store"
+version = "0.1.0"
+description = "Lightweight LMDB-backed object store for Python"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "yuka30240", email = "yuuka30240@gmail.com" }
+]
+maintainers = [
+    { name = "yuka30240", email = "yuuka30240@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "lmdb>=1.7.3",
+]
+keywords = ["lmdb", "object-store", "database", "key-value", "thread-safe", "atomic"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/yuka30240/LmdbObjectStore"
+Repository = "https://github.com/yuka30240/LmdbObjectStore"
+Issues = "https://github.com/yuka30240/LmdbObjectStore/issues"
+Changelog = "https://github.com/yuka30240/LmdbObjectStore/releases"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q --strict-markers -ra"
+testpaths = ["tests"]
+xfail_strict = true
+filterwarnings = [
+  "error::DeprecationWarning:lmdb_object_store.*",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+  "E","F","W",  # pycodestyle/pyflakes
+  "I",          # isort equiv sorting imports
+  "N",          # pep8-naming
+  "UP",         # pyupgrade
+  "B",          # bugbear
+  "C4",         # comprehensions
+  "SIM",        # simplifications
+  "ARG",        # unused arguments
+  "RUF",        # ruff
+  "D",          # pydocstyle
+]
+
+ignore = ["D203", "D212"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+ignore-decorators = ["typing.overload"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+docstring-code-line-length = 88
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
